@@ -1,4 +1,3 @@
-main.js
 
 var suit
 

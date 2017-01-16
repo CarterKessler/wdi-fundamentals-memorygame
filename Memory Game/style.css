@@ -1,0 +1,31 @@
+h1 {
+  color: green;
+}
+
+p {
+  color: tan;
+}
+
+.card {
+
+}
+
+body {
+  text-align: center;
+}
+
+.board {
+  height: 80%;
+  width: 50%;
+  display: inline-block;
+  background-color: purple;
+}
+
+.card {
+  height: 200px;
+  width: 150px;
+  border: black 1px;
+  background-color: yellow;
+  border-radius: 10px;
+  display: inline-block;
+}
