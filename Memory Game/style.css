@@ -25,7 +25,8 @@ body {
   height: 200px;
   width: 150px;
   border: black 1px;
-  background-color: yellow;
+  background-color: white;
+  color: yellow;
   border-radius: 10px;
   display: inline-block;
 }
