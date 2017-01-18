@@ -16,23 +16,38 @@ var cardFour ="king";
 //   alert("You found a match!")
 // };
 
-var node = document.createTextNode("This is a new card.");
+// var node = document.createTextNode("This is a new card.");
+//
+// var element = document.getElementById("game-board");
+//
+// element.appendChild(node);
 
-var element = document.getElementById("game-board");
+for (i=0; i<4; i++){
+  //make a div
+  var div = document.createElement("div");
+  //make a text node
+  var t = document.createTextNode("Hello");
+  //give a class
+  div.className = "card";
+  //put textnode inside the div
+  div.appendChild(t);
 
-element.appendChild(node);
+  //add the div to the body
+  document.getElementById("game-board").appendChild(div);
 
 
-function createCard(i){
-  for (i = 0; i<4; i++){
-    // var createCard = document.createElement('div');
-    // var gameBoard = document.getElementById('game-board');
-    function card() {
-       element.appendChild('game-board');
-    };
-
-    // .className('card').appendChild('game-board')
-  }
 };
 
-createCard(4);
+// function createCard(){
+//   for (i = 0; i<4; i++){
+//     // var createCard = document.createElement('div');
+//     // var gameBoard = document.getElementById('game-board');
+//     // function card() {
+//     //    element.appendChild('game-board');
+//     };
+//
+//     // .className('card').appendChild('game-board')
+//   }
+// };
+
+// createCard(4);
