@@ -16,7 +16,7 @@ body {
 
 .board {
   height: 80%;
-  width: 50%;
+  width: 65%;
   display: inline-block;
   background-color: purple;
 }
@@ -24,9 +24,14 @@ body {
 .card {
   height: 200px;
   width: 150px;
-  border: black 1px;
-  background-color: white;
+  border: black 10px;
+  background-color: teal;
   color: yellow;
   border-radius: 10px;
   display: inline-block;
+  text-align: center;
+  margin: 7px;
+}
+footer {
+  padding-top: 35px;
 }
