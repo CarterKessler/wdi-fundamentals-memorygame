@@ -1,95 +1,97 @@
-// function myFunction(){
-//   document.getElementById("card1").innerHTML = '<img src="my_king.png" alt="King  />'
-// };
-
-
 //created array to house the cards that are clicked on
 var cardsInPlay = [ ];
 //created array to house all the cards in play
-var cards = ["king", "queen", "king", "queen"];
-//
-// cardOne = "queen";
-// cardTwo = "king";
-// cardThree = "queen";
-// cardFour = "king";
-
-
-// wrote function
-// var isMatch = function (e) {
-//
-//   if (e.target.id === cardsInPlay[0]) {
-//     return "ITS A MATCH"
-//   } else {
-//     return "It's a match!!"
-//   }
-//   console.log('isMatch');
-// };
-
-var isMatch = function (e) {
-  console.log(cardsInPlay[0]);
-  console.log(cardsInPlay[1]);
-  console.log(cardsInPlay[0] === cardsInPlay[1]);
-  if (cardsInPlay[1] === cardsInPlay[0]) {
-    alert ("ITS A MATCH")
-  } else {
-    alert ("keep trying!")
-  }
-
-};
+var cards = ["jack", "king", "jack", "queen", "king", "queen"];
 
 
 
-
- //wrote another function
-
+// resetCards(e);
 
 var createBoard = function(cards){
    for (i=0; i<cards.length; i++){
-    //  cardsInPlay[i] = i * i;
      //made a new elemet- div
      var board = document.getElementById("game-board")
      var div = document.createElement("div");
      //make a text node
-     var t = document.createTextNode("Memory");
+    //  var t = document.createTextNode("Memory");
      //gave a class to teh new div elements
      div.className = "card";
      //put textnode inside the div
      div.setAttribute('data-card', cards[i]);
      //added the new text to the new divs(cards)
-     div.appendChild(t);
+    //  div.appendChild(t);
      //matched the new div element to the index with an id
      div.setAttribute('id', i);
      //add the div to the body, the game-board id
      document.getElementById("game-board").appendChild(div);
 
+
+
      var turnCard = function(e){
        console.log(e.target.id);
-       // document.getElementbyId(e.target.id).src = "my_queen.png";
-        if (e.target.id == "0" || e.target.id == "2") {
+        if (e.target.id == "1" || e.target.id == "4") {
           e.target.innerHTML= '<img src="my_king.png" alt="King "   />'
-        } else {
+        } else if (e.target.id == "3" || e.target.id == "5") {
           e.target.innerHTML='<img src="my_queen.png" alt="Queen " />'
+        } else {
+          e.target.innerHTML='<img src="jack.images.png" alt="Jack" />'
         }
        };
+      var isMatch = function (e) {
 
+         console.log(cardsInPlay[0]);
+         console.log(cardsInPlay[1]);
+         console.log(cardsInPlay[0] === cardsInPlay[1]);
 
+         if (cardsInPlay[0] === cardsInPlay[1]) {
+           alert ("ITS A MATCH")
+         } else {
+           alert ("try again"), resetCards(e)
+         }
+         cardsInPlay = [];
+       };
+      //    } else if (cardsInPlay[1] ===cardsInPlay[2]){
+      //      alert ("Now it's a match")
+      //    } else if(cardsInPlay[1] != cardsInPlay[2]){
+      //      alert ("keep trying"), resetCards(e)
+      //    } else if (cardsInPlay[2] === cardsInPlay[3] || cardsInPlay[0] === cardsInPlay[2]){
+      //      alert ("You got it, now it's a match")
+      //    } else {
+      //      alert ("try again"), resetCards(e)
+      //    }
+      //  };
 
-     var isTwoCards = function (e){
+    var isTwoCards = function (e){
 
         cardsInPlay.push(this.getAttribute('data-card'));
         console.log(cardsInPlay);
 
         if (cardsInPlay.length === 2){
           isMatch(cardsInPlay);
+        } else {
+          console.log('click one more')
         }
-       //  else if (cardsInPlay.length === 1){
-       //    return "Find the match"
-       //  }
-       //    cardsInPlay= [];
-       //  }
-        console.log('isTwoCards');
+        };
 
-       };
+    var resetCards = function (e){
+        console.log('reset the cards please');
+      var el = document.querySelectorAll('.card img');
+      for (var i=0; i<cardsInPlay.length; i++){
+          el[i].style.visibility='hidden'
+        };
+    };
+
+
+
+    // var resetBoard = function (e){
+    //
+    // };
+
+    // var resetCards = function (){
+    //         console.log("Reset cards please");
+    //
+    //       };
+
 
 
 
@@ -100,25 +102,18 @@ var createBoard = function(cards){
 
 };
 
+
 createBoard (cards);
 
+// var resetBoard = function (e) {
+//   console.log('start over');
+//   alert ("Let's start over")
+//   var puppy = document.querySelectorAll('.card img');
+//   for (var i= 0; i<cards.length; i++){
+//     puppy[i].style.visiblity= "hidden"
+//   };
+// };
 
-
-
-      // var today = new Date();
-      // var hourNow = today.getHours();
-      // var greeting;
-      //
-      // if (hourNow >18) {
-      //   greeting = 'Good evening!';
-      // } else if (hourNow >12) {
-      //   greeting = 'Good Afternoon!';
-      // } else if (hourNow >0) {
-      //   greeting = 'Good morning!';
-      // } else {
-      //   greeting = 'Welcome!';
-      // }
-      //
-      // document.write('<h3>' + greeting + '</h3>');
-
-      //  div.setAttribute('id', cards[i]);
+$("button").click(function(){
+  $("div").math.random("card img")
+});
