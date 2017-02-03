@@ -5,6 +5,9 @@ h1 {
 p {
   color: tan;
 }
+#game-text {
+  color: red;
+}
 
 .card {
 
