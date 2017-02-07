@@ -3,7 +3,7 @@ h1 {
 }
 
 p {
-  color: tan;
+  color: black;
 }
 #game-text {
   color: red;
@@ -18,18 +18,20 @@ body {
 }
 
 .board {
-  height: 80%;
-  width: 65%;
-  display: inline-block;
-  background-color: purple;
+  height: 45%;
+  width: 85%;
+  display: inline-flex;
+  background-color: tan;
+  padding: 5%;
 }
 .card img {
-  max-width: 100%;
-  max-height: 80%;
+  max-width: 80%;
+  max-height: 70%;
   visibility: visible;
+  margin-top: 15%;
 }
 .card {
-  height: 200px;
+  height: 160px;
   width: 150px;
   border: black 10px;
   background-color: teal;
