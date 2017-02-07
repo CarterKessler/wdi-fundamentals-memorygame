@@ -1,44 +1,52 @@
-var cards = ["jack", "king", "jack", "queen", "king", "queen"];
+// var cards = ["jack", "king", "jack", "queen", "king", "queen"];
 var cardsInPlay = [];
-// var cards = [];
+var cards = [];
 // // // var HBO = cards.length;
 // // // var face = "div";
-// var makeCardsArray = function(){
-//   for(var i= 0; i<8; i++){
-//     if (cards[i]=== 3 || cards[i] === 5) {setAttribute("queen")};
-//       // if (i === [0] || i === [4]){
-//       //   cards.fill("queen")
-//       // } else if (i === [1] || i === [7]){
-//       //   cards.fill("king")
-//       // } else if (i === [2] || i === [6]){
-//       //   cards.fill("joker")
-//       // } else {
-//       //   cards.fill("jack")
-//       // }
-//       cards.push(i.toString());
+var makeCardsArray = function(){
+  var taco = [];
+
+      taco.push('jack');
+      taco.push('jack');
+      taco.push('king');
+      taco.push('king');
+      taco.push('queen');
+      taco.push('queen');
+      taco.push('joker');
+      taco.push('joker');
+
+      return taco;
+
+};
 //
-//
-//   };
-// };
-//
-// var cards = makeCardsArray();
+cards = makeCardsArray();
 // [1, 7].fill("king");
 // cards.forEach(makeCardsArray(0, [0])"queen");
 
 console.log(cards);
 
+var randomCards= function() {
+  cards.sort(function(a, b){return 0.5 - Math.random()});
+  createBoard(cards);
+  console.log(cards);
+  };
+
+
+
 var turnCard = function(e){
   console.log(e.target.id);
   console.log(e.target.className);
+  // console.log(cards);
+  // console.log(e.target.card[i]);
 
-   if (e.target.id == "1" || e.target.id == "4") {
+   if (e.target.className === "card king") {
      e.target.innerHTML= '<img src="my_king.png" alt="King "   />'
-   } else if (e.target.id == "3" || e.target.id == "5") {
+   } else if (e.target.className === "card queen") {
      e.target.innerHTML='<img src="my_queen.png" alt="Queen " />'
-   } else if (e.target.id == "0" || e.target.id == "2") {
+   } else if (e.target.className === "card jack") {
      e.target.innerHTML='<img src="jack.images.png" alt="Jack" />'
    }
-   else {
+   else if (e.target.className === "card joker"){
      e.target.innerHTML='<img src="joker.jpg" alt="Joker" />'
    }
    //isTwoCards;
@@ -67,8 +75,9 @@ var isMatch = function (e) {
          } else if (cardsInPlay[0]==="king"){
            $("div").remove(".king");
            cardsInPlay = [];
-         } else {
-           console.log("french fries");
+         } else if (cardsInPlay[0]==="joker"){
+           $("div").remove(".joker");
+          //  console.log("french fries");
            cardsInPlay = [];
          }
 
@@ -163,8 +172,3 @@ var createBoard = function(cards){
 
 
 createBoard (cards);
-
-var randomCards= function() {
-  cards.sort(function(a, b){return 0.5 - Math.random()});
-  createBoard(cards);
-  };
