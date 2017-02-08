@@ -34,12 +34,12 @@ body {
   max-width: 80%;
   max-height: 70%;
   visibility: visible;
-  margin-top: 15%;
+  margin-top: 25%;
 }
 .card {
-  height: 160px;
+  height: 150px;
   width: 150px;
-  border: black 10px;
+  border: black 20px;
   background-color: teal;
   color: yellow;
   border-radius: 10px;
@@ -48,12 +48,18 @@ body {
   margin: 7px;
   visibility: visible;
 }
+.card:hover{
+  cursor: crosshair;
+}
 footer {
   padding-top: 35px;
 }
 
 button {
   margin-right: 25px;
+}
+button:hover{
+  cursor: grab;
 }
 
 .twitter {
