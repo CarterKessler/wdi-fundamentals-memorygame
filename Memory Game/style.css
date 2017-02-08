@@ -1,10 +1,16 @@
+#Texas {
+  background-color: black;
+}
+
 h1 {
   color: green;
 }
 
 p {
-  color: black;
+  color: white;
+  font-style: italic;
 }
+
 #game-text {
   color: red;
 }
@@ -44,4 +50,12 @@ body {
 }
 footer {
   padding-top: 35px;
+}
+
+button {
+  margin-right: 25px;
+}
+
+.twitter {
+  color: white;
 }
