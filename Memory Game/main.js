@@ -54,7 +54,7 @@ var turnCard = function(e){
    } else if (e.target.className === "card joker"){
      e.target.innerHTML='<img src="joker.jpg" alt="Joker" />'
    } else if (e.target.className === "card ace") {
-     e.target.innerHTML='<img src="ace2.png alt="Ace" />'
+     e.target.innerHTML='<img src="Dang.jpg" alt="Ace" />'
    }
 
   };

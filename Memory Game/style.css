@@ -24,7 +24,7 @@ body {
 }
 
 .board {
-  height: 45%;
+  height: 65%;
   width: 85%;
   display: inline-flex;
   background-color: tan;
@@ -37,7 +37,7 @@ body {
   margin-top: 25%;
 }
 .card {
-  height: 150px;
+  height: 130px;
   width: 150px;
   border: black 20px;
   background-color: teal;
@@ -77,5 +77,5 @@ button:hover{
 
 @keyframes grow {
   from {height: 0px;}
-  to {height: 150px;}
+  to {height: 130px;}
 }
