@@ -2,14 +2,17 @@
 var cardsInPlay = [];
 var cards = [];
 var jerk = [];
+var tries = [];
 var makeCardsArray = function(){
   var taco = [];
       taco.push('king');
       taco.push('jack');
+      taco.push('ace');
       taco.push('joker');
       taco.push('king');
       taco.push('queen');
       taco.push('jack');
+      taco.push('ace');
       taco.push('queen');
       taco.push('joker');
       return taco;
@@ -17,13 +20,19 @@ var makeCardsArray = function(){
 
 cards = makeCardsArray();
 
-console.log(cards);
+console.log(cards.length);
+console.log(tries.length);
+
+ document.getElementById("score").innerHTML= tries.length;
+
 
 var randomCards = function() {
-  if (jerk.length==4) {cards.sort(function(a, b){return 0.5 - Math.random()});
+  if (jerk.length==5) {cards.sort(function(a, b){return 0.5 - Math.random()});
   createBoard(cards);
   console.log(cards);
   jerk= [];
+  tries= [];
+  document.getElementById("score").innerHTML= 0;
   } else {
     alert ("Finish this one first")
   }
@@ -42,9 +51,10 @@ var turnCard = function(e){
      e.target.innerHTML='<img src="my_queen.png" alt="Queen " />'
    } else if (e.target.className === "card jack") {
      e.target.innerHTML='<img src="jack.images.png" alt="Jack" />'
-   }
-   else if (e.target.className === "card joker"){
+   } else if (e.target.className === "card joker"){
      e.target.innerHTML='<img src="joker.jpg" alt="Joker" />'
+   } else if (e.target.className === "card ace") {
+     e.target.innerHTML='<img src="ace2.png alt="Ace" />'
    }
 
   };
@@ -65,19 +75,33 @@ var isMatch = function (e) {
          if (cardsInPlay[0]==="jack"){
            $("div").remove(".jack");
            jerk.push("jack");
+           tries.push("jack");
            cardsInPlay = [];
+           document.getElementById("score").innerHTML= tries.length;
          } else if (cardsInPlay[0]==="queen"){
            $("div").remove(".queen");
            jerk.push("queen");
+           tries.push("queen");
            cardsInPlay = [];
+           document.getElementById("score").innerHTML= tries.length;
          } else if (cardsInPlay[0]==="king"){
            $("div").remove(".king");
            jerk.push("king");
+           tries.push("king");
            cardsInPlay = [];
+           document.getElementById("score").innerHTML= tries.length;
          } else if (cardsInPlay[0]==="joker"){
            $("div").remove(".joker");
            jerk.push("joker");
+           tries.push("joker");
            cardsInPlay = [];
+           document.getElementById("score").innerHTML= tries.length;
+         } else if (cardsInPlay[0]==="ace"){
+           $("div").remove(".ace");
+           jerk.push("ace");
+           tries.push("ace");
+           cardsInPlay = [];
+           document.getElementById("score").innerHTML= tries.length;
          }
          console.log(jerk);
        };
@@ -94,6 +118,8 @@ var isMatch = function (e) {
              el[i].style.visibility='hidden'
            }
            cardsInPlay = [];
+           tries.push("wrong");
+           document.getElementById("score").innerHTML= tries.length;
        };
      }
      };

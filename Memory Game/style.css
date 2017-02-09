@@ -47,9 +47,13 @@ body {
   text-align: center;
   margin: 7px;
   visibility: visible;
+  animation-name: grow;
+  animation-duration: 2.5s;
+  animation-delay: 1s;
 }
 .card:hover{
   cursor: crosshair;
+  transform: rotateZ(5deg);
 }
 footer {
   padding-top: 35px;
@@ -64,4 +68,14 @@ button:hover{
 
 .twitter {
   color: white;
+}
+
+#score {
+  color: white;
+  margin-right: 30px;
+}
+
+@keyframes grow {
+  from {height: 0px;}
+  to {height: 150px;}
 }
