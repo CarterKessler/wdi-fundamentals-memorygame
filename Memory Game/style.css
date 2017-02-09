@@ -26,7 +26,7 @@ body {
 .board {
   height: 65%;
   width: 85%;
-  display: inline-flex;
+  display: block;
   background-color: tan;
   padding: 5%;
 }
@@ -52,7 +52,7 @@ body {
   animation-delay: 1s;
 }
 .card:hover{
-  cursor: crosshair;
+  cursor: pointer;
   transform: rotateZ(5deg);
 }
 footer {

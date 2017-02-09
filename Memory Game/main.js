@@ -23,8 +23,21 @@ cards = makeCardsArray();
 console.log(cards.length);
 console.log(tries.length);
 
- document.getElementById("score").innerHTML= tries.length;
+// var textTag;
+//
+// textTag = setTimeout(tagLine, 1200)
 
+document.getElementById("score").innerHTML= tries.length;
+
+// var resultsTag = function(){
+//   if (tries.length<=10){
+//     document.getElementById("gametext").innerHTML= "Niiiice, you still got it!";
+//   } else if (tries.length<=16){
+//     document.getElementById("gametext").innerHTML= "Okay, still room for improvement";
+//   } else if (tries.length<=20){
+//     document.getElementById("gametext").innerHTML= "Ughh, maybe you should keep playing";
+//   }
+// };
 
 var randomCards = function() {
   if (jerk.length==5) {cards.sort(function(a, b){return 0.5 - Math.random()});
