@@ -46,13 +46,13 @@ var turnCard = function(e){
   // console.log(e.target.card[i]);
 
    if (e.target.className === "card king") {
-     e.target.innerHTML= '<img src="my_king.png" alt="King "   />'
+     e.target.innerHTML= '<img src="Kyle.jpg" alt="King "   />'
    } else if (e.target.className === "card queen") {
-     e.target.innerHTML='<img src="my_queen.png" alt="Queen " />'
+     e.target.innerHTML='<img src="Nmanda.jpg" alt="Queen " />'
    } else if (e.target.className === "card jack") {
-     e.target.innerHTML='<img src="jack.images.png" alt="Jack" />'
+     e.target.innerHTML='<img src="Vinny.jpg" alt="Jack" />'
    } else if (e.target.className === "card joker"){
-     e.target.innerHTML='<img src="joker.jpg" alt="Joker" />'
+     e.target.innerHTML='<img src="Steph.jpg" alt="Joker" />'
    } else if (e.target.className === "card ace") {
      e.target.innerHTML='<img src="Dang.jpg" alt="Ace" />'
    }
